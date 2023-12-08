@@ -5,4 +5,4 @@ mamba env update --name notebook --file environment.yml
 mv .binder/.pyiron .
 
 # import dataset
-bash .github/ci_support/import_dataset.sh
+# bash .github/ci_support/import_dataset.sh
