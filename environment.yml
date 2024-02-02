@@ -2,7 +2,7 @@ channels:
 - conda-forge
 dependencies:
 - cmake
-- python =3.10
+- python
 - atomicrex =1.0.3
 - runner =1.2
 - pyiron_potentialfit =0.0.1
