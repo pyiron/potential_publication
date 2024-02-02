@@ -1,0 +1,946 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Normal EV curves &#8212; potentials_publication</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_validation/Fig5_Fig7';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="Fig6.html" />
+    <link rel="prev" title="Elastic constants and phonos" href="01_running_validation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo_dark.png" class="logo__image only-light" alt="potentials_publication - Home"/>
+    <script>document.write(`<img src="../_static/logo_dark.png" class="logo__image only-dark" alt="potentials_publication - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    potentials publication
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_data_generation/01_generating_data.html">Generating data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_data_generation/02_creating_training_container.html">Creating training data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_fitting/01-EAM/HandsOnPotenitalFitting.html">EAM potentials 2: Hands on</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_fitting/01-EAM/IntroductionPotentialFitting.html">EAM potentials 1: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_fitting/02-HDNNP/handson.html">High-Dimensional Neural Network Potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_fitting/03-ACE/pacemaker_example.html">Atomic cluster expansion (ACE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_running_validation.html">Elastic constants and phonos</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Normal EV curves</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../example.html">pyiron example notebook</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/pyiron/potentials_publication/master?urlpath=lab/tree/03_validation/Fig5_Fig7.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/03_validation/Fig5_Fig7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Normal EV curves</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Normal EV curves</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-hull">Convex Hull</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">helper</span> <span class="kn">import</span> <span class="n">get_clean_project_name</span>
+<span class="kn">from</span> <span class="nn">pyiron_atomistics</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="kn">from</span> <span class="nn">pyiron_atomistics.atomistics.structure.atoms</span> <span class="kn">import</span> <span class="n">ase_to_pyiron</span><span class="p">,</span> <span class="n">pyiron_to_ase</span>
+<span class="kn">import</span> <span class="nn">pyiron_gpl</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pychromatic</span> <span class="kn">import</span> <span class="n">Multiplot</span>
+<span class="kn">from</span> <span class="nn">pychromatic.colors</span> <span class="kn">import</span> <span class="n">accent</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;g&quot;</span><span class="p">:</span> <span class="s2">&quot;#1b9e77&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="s2">&quot;#d95f02&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;#7570b3&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/menon/miniconda3/envs/potentials2023/lib/python3.10/site-packages/numpy/core/getlimits.py:542: UserWarning: Signature b&#39;\x00\xd0\xcc\xcc\xcc\xcc\xcc\xcc\xfb\xbf\x00\x00\x00\x00\x00\x00&#39; for &lt;class &#39;numpy.longdouble&#39;&gt; does not match any known type: falling back to type probe function.
+This warnings indicates broken support for the dtype!
+  machar = _get_machar(dtype)
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a344067b4f9b4570b3dc2b6124590ab2", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">birch_murnaghan</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">V0</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">Bp</span><span class="p">):</span>    
+    <span class="n">eta</span> <span class="o">=</span> <span class="p">(</span><span class="n">vol</span><span class="o">/</span><span class="n">V0</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">E0</span> <span class="o">+</span> <span class="mf">9.0</span><span class="o">*</span><span class="n">B0</span><span class="o">*</span><span class="n">V0</span><span class="o">/</span><span class="mf">16.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">eta</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mf">6.0</span> <span class="o">+</span> <span class="n">Bp</span><span class="o">*</span><span class="p">(</span><span class="n">eta</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">-</span> <span class="mf">4.0</span><span class="o">*</span><span class="n">eta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">E</span>
+
+<span class="k">def</span> <span class="nf">fit_bm</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">en</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">V0</span> <span class="o">=</span> <span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">E0</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">V0</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">V0</span> <span class="o">+</span> <span class="n">c</span>
+    <span class="n">B0</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">V0</span>
+    <span class="n">Bp</span> <span class="o">=</span> <span class="mf">4.0</span>
+    <span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">birch_murnaghan</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="n">V0</span><span class="p">,</span> <span class="n">E0</span><span class="p">,</span> <span class="n">B0</span><span class="p">,</span> <span class="n">Bp</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">popt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;validation_LiAl2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;table_murn&#39;</span><span class="p">)</span>
+<span class="n">data_murn</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">()</span>
+<span class="n">df_dft_ref</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s2">&quot;dft_ref_2.pckl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_en_vol</span><span class="p">(</span><span class="n">pot</span><span class="p">,</span> <span class="n">compound</span><span class="p">,</span> <span class="n">crystal_structure</span><span class="p">,</span> <span class="n">points</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">data_murn</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data_murn</span><span class="o">.</span><span class="n">potential</span><span class="o">==</span><span class="n">pot</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data_murn</span><span class="o">.</span><span class="n">compound</span><span class="o">==</span><span class="n">compound</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data_murn</span><span class="o">.</span><span class="n">crystal_structure</span><span class="o">==</span><span class="n">crystal_structure</span><span class="p">)]</span>
+    <span class="c1">#print(df.job_id)</span>
+    <span class="n">murn_job</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">job_id</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">murn_df</span> <span class="o">=</span> <span class="n">murn_job</span><span class="o">.</span><span class="n">output_to_pandas</span><span class="p">()</span>
+    <span class="n">vol</span> <span class="o">=</span> <span class="n">murn_df</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">murn_job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">())</span>
+    <span class="n">en</span> <span class="o">=</span> <span class="n">murn_df</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">murn_job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">())</span>
+    <span class="n">popt</span> <span class="o">=</span> <span class="n">fit_bm</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">en</span><span class="p">)</span>
+    <span class="n">volfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">vol</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">vol</span><span class="p">),</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">enfit</span> <span class="o">=</span> <span class="n">birch_murnaghan</span><span class="p">(</span><span class="n">volfit</span><span class="p">,</span> <span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">volfit</span><span class="p">,</span> <span class="n">enfit</span>
+
+<span class="k">def</span> <span class="nf">get_en_vol_dft</span><span class="p">(</span><span class="n">compound</span><span class="p">):</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">df_dft_ref</span><span class="p">[</span><span class="n">df_dft_ref</span><span class="p">[</span><span class="s2">&quot;compound&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">compound</span><span class="p">]</span>
+    <span class="n">vol</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+    <span class="n">en</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s2">&quot;energy_per_atom&quot;</span><span class="p">]</span>
+    <span class="n">popt</span> <span class="o">=</span> <span class="n">fit_bm</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">en</span><span class="p">)</span>
+    <span class="n">volfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">vol</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">vol</span><span class="p">),</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">enfit</span> <span class="o">=</span> <span class="n">birch_murnaghan</span><span class="p">(</span><span class="n">volfit</span><span class="p">,</span> <span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">volfit</span><span class="p">,</span> <span class="n">enfit</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="normal-ev-curves">
+<h1>Normal EV curves<a class="headerlink" href="#normal-ev-curves" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlt</span> <span class="o">=</span> <span class="n">Multiplot</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc&quot;</span><span class="p">)</span>
+<span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc&quot;</span><span class="p">)</span>
+<span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc&quot;</span><span class="p">)</span>
+<span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span> <span class="o">=</span> <span class="n">get_en_vol_dft</span><span class="p">(</span><span class="s2">&quot;Al_fcc&quot;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;DFT&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;EAM&quot;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;HDNNP&quot;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;ACE&quot;</span><span class="p">)</span>
+
+<span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s2">&quot;Li&quot;</span><span class="p">,</span> <span class="s2">&quot;bcc&quot;</span><span class="p">)</span>
+<span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s2">&quot;Li&quot;</span><span class="p">,</span> <span class="s2">&quot;bcc&quot;</span><span class="p">)</span>
+<span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s2">&quot;Li&quot;</span><span class="p">,</span> <span class="s2">&quot;bcc&quot;</span><span class="p">)</span>
+<span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span> <span class="o">=</span> <span class="n">get_en_vol_dft</span><span class="p">(</span><span class="s2">&quot;Li_bcc&quot;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;BCC&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s2">&quot;Li&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc&quot;</span><span class="p">)</span>
+<span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s2">&quot;Li&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc&quot;</span><span class="p">)</span>
+<span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s2">&quot;Li&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc&quot;</span><span class="p">)</span>
+<span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span> <span class="o">=</span> <span class="n">get_en_vol_dft</span><span class="p">(</span><span class="s2">&quot;Li_fcc&quot;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;FCC&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+
+
+<span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s2">&quot;Li2Al2&quot;</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
+<span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s2">&quot;Li2Al2&quot;</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
+<span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s2">&quot;Li2Al2&quot;</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
+<span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span> <span class="o">=</span> <span class="n">get_en_vol_dft</span><span class="p">(</span><span class="s2">&quot;LiAl_mp-1067&quot;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">dft_en</span><span class="p">)</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;AlLi&quot;</span><span class="p">)</span>
+
+<span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s2">&quot;LiAl3&quot;</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
+<span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s2">&quot;LiAl3&quot;</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
+<span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s2">&quot;LiAl3&quot;</span><span class="p">,</span> <span class="s2">&quot;cubic&quot;</span><span class="p">)</span>
+<span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span> <span class="o">=</span> <span class="n">get_en_vol_dft</span><span class="p">(</span><span class="s2">&quot;LiAl3_mp-10890&quot;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">dft_en</span><span class="p">)</span><span class="o">+</span><span class="mf">0.05</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{AlLi}</span><span class="s2">_3$&quot;</span><span class="p">)</span>
+
+<span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s2">&quot;Li9Al4&quot;</span><span class="p">,</span> <span class="s2">&quot;monoclinic&quot;</span><span class="p">)</span>
+<span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s2">&quot;Li9Al4&quot;</span><span class="p">,</span> <span class="s2">&quot;monoclinic&quot;</span><span class="p">)</span>
+<span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s2">&quot;Li9Al4&quot;</span><span class="p">,</span> <span class="s2">&quot;monoclinic&quot;</span><span class="p">)</span>
+<span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span> <span class="o">=</span> <span class="n">get_en_vol_dft</span><span class="p">(</span><span class="s2">&quot;Li9Al4_mp-568404&quot;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashdot&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashdot&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashdot&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashdot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">dft_en</span><span class="p">)</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{Al_4Li_9}</span><span class="s2">$&quot;</span><span class="p">)</span>
+
+<span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s2">&quot;Li3Al2&quot;</span><span class="p">,</span> <span class="s2">&quot;trigonal&quot;</span><span class="p">)</span>
+<span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s2">&quot;Li3Al2&quot;</span><span class="p">,</span> <span class="s2">&quot;trigonal&quot;</span><span class="p">)</span>
+<span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span> <span class="o">=</span> <span class="n">get_en_vol</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s2">&quot;Li3Al2&quot;</span><span class="p">,</span> <span class="s2">&quot;trigonal&quot;</span><span class="p">)</span>
+<span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span> <span class="o">=</span> <span class="n">get_en_vol_dft</span><span class="p">(</span><span class="s2">&quot;Li3Al2_mp-16506&quot;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">,</span> <span class="n">dft_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eam_vol</span><span class="p">,</span> <span class="n">eam_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hdn_vol</span><span class="p">,</span> <span class="n">hdn_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ace_vol</span><span class="p">,</span> <span class="n">ace_en</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">dft_vol</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">dft_en</span><span class="p">)</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{Al_2Li_3}</span><span class="s2">$&quot;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">[</span><span class="mf">1.45</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Volume ($\mathrm{\AA}^3/$atom)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Volume ($\mathrm{\AA}^3/$atom)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Volume ($\mathrm{\AA}^3/$atom)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Energy (eV/atom)&quot;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(a)&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(b)&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(c)&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.7625</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.7425</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;img_ev_curve.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-12-08 10:47:06,126 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:06,128 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:06,134 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:06,135 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:06,143 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:06,144 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:06,146 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:06,153 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:06,377 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:06,379 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:06,384 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:06,386 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:06,396 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:06,397 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:06,401 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:06,407 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:06,618 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:06,621 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:06,624 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:06,626 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:06,632 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:06,633 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:06,635 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Al_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:06,641 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:07,234 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:07,237 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:07,242 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:07,243 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:07,249 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:07,250 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:07,255 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:07,262 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:07,498 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:07,500 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:07,505 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:07,507 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:07,513 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:07,515 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:07,519 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:07,527 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:07,754 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:07,757 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:07,765 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:07,768 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:07,775 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:07,776 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:07,779 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_bcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:07,785 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:08,044 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,047 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,052 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,053 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,059 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:08,061 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,063 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,070 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:08,303 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:08,304 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:08,309 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:08,310 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:08,316 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:08,317 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:08,319 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:08,332 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:08,537 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:08,539 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:08,544 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:08,546 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:08,551 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:08,553 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:08,560 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li_fcc&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:08,567 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:08,825 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,827 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,831 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,832 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,839 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:08,840 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,843 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:08,849 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:09,073 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,075 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,079 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,081 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,087 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:09,089 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,091 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,103 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:09,342 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:09,344 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:09,348 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:09,350 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:09,356 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:09,357 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:09,359 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li2Al2_Li2Al2_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:09,368 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:09,638 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:09,641 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:09,646 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:09,650 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:09,656 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:09,657 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:09,659 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:09,666 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:09,872 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,875 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,880 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,881 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,886 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:09,888 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,890 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:09,897 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:10,150 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,152 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,157 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,159 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,168 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:10,169 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,172 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_LiAl3_LiAl3_cubic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,181 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:10,445 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:10,448 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:10,452 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:10,454 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:10,459 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:10,461 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:10,463 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:10,469 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:10,713 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:10,716 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:10,720 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:10,722 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:10,727 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:10,728 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:10,730 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:10,735 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:10,975 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,978 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,983 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,985 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,990 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:10,991 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:10,994 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li9Al4_Li9Al4_monoclinic&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:11,004 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:11,288 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:11,290 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:11,294 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:11,295 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:11,302 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:11,303 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:11,306 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_eam/&#39;}
+2023-12-08 10:47:11,313 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:11,552 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:11,554 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:11,559 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:11,561 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:11,567 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:11,569 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:11,570 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_hdnnp/&#39;}
+2023-12-08 10:47:11,580 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:11,837 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:11,839 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:11,844 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:11,845 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:11,852 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:11,854 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:11,856 - pyiron_log - DEBUG - sql_query: {&#39;job&#39;: &#39;murn_job_Li3Al2_Li3Al2_trigonal&#39;, &#39;project&#39;: &#39;/mnt/c/Users/menon/Documents/winrepos/projects-workshops/potentials-workshop-2022/validation/validation_LiAl2/AlLi_ace/&#39;}
+2023-12-08 10:47:11,861 - pyiron_log - DEBUG - Not supported parameter used!
+2023-12-08 10:47:11,914 - matplotlib.legend - WARNING - No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+</pre></div>
+</div>
+<img alt="../_images/e71e5e6176771d16b2bf6383820bfbf1a58c68f23ac48bbd1305f87fe4a4adde.png" src="../_images/e71e5e6176771d16b2bf6383820bfbf1a58c68f23ac48bbd1305f87fe4a4adde.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="convex-hull">
+<h1>Convex Hull<a class="headerlink" href="#convex-hull" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_en</span><span class="p">(</span><span class="n">pot</span><span class="p">,</span> <span class="n">compound</span><span class="p">,</span> <span class="n">crystal_structure</span><span class="p">,</span> <span class="n">points</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">data_murn</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data_murn</span><span class="o">.</span><span class="n">potential</span><span class="o">==</span><span class="n">pot</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data_murn</span><span class="o">.</span><span class="n">compound</span><span class="o">==</span><span class="n">compound</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data_murn</span><span class="o">.</span><span class="n">crystal_structure</span><span class="o">==</span><span class="n">crystal_structure</span><span class="p">)]</span>
+    <span class="c1">#print(df.job_id)</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">eq_energy</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">n_atoms</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_en_dft</span><span class="p">(</span><span class="n">compound</span><span class="p">):</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">df_dft_ref</span><span class="p">[</span><span class="n">df_dft_ref</span><span class="p">[</span><span class="s2">&quot;compound&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">compound</span><span class="p">]</span>
+    <span class="n">vol</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span>
+    <span class="n">en</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s2">&quot;energy_per_atom&quot;</span><span class="p">]</span>
+    <span class="n">popt</span> <span class="o">=</span> <span class="n">fit_bm</span><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">en</span><span class="p">)</span>
+    <span class="n">volfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">vol</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">vol</span><span class="p">),</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="n">enfit</span> <span class="o">=</span> <span class="n">birch_murnaghan</span><span class="p">(</span><span class="n">volfit</span><span class="p">,</span> <span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">popt</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">enfit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">al_dft</span> <span class="o">=</span> <span class="n">get_en_dft</span><span class="p">(</span><span class="s1">&#39;Al_fcc&#39;</span><span class="p">)</span>
+<span class="n">li_dft</span> <span class="o">=</span> <span class="n">get_en_dft</span><span class="p">(</span><span class="s1">&#39;Li_bcc&#39;</span><span class="p">)</span>
+
+<span class="n">c0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">s0_eam</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s1">&#39;Al&#39;</span><span class="p">,</span> <span class="s1">&#39;fcc&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c0</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c0</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s0_hdn</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s1">&#39;Al&#39;</span><span class="p">,</span> <span class="s1">&#39;fcc&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c0</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c0</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s0_ace</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s1">&#39;Al&#39;</span><span class="p">,</span> <span class="s1">&#39;fcc&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c0</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c0</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+
+<span class="n">c1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">s1_dft</span> <span class="o">=</span> <span class="n">get_en_dft</span><span class="p">(</span><span class="s2">&quot;LiAl3_mp-10890&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c1</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span> 
+<span class="n">s1_eam</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s1">&#39;LiAl3&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c1</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s1_hdn</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s1">&#39;LiAl3&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c1</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s1_ace</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s1">&#39;LiAl3&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c1</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+
+<span class="n">c2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">s2_dft</span> <span class="o">=</span> <span class="n">get_en_dft</span><span class="p">(</span><span class="s2">&quot;LiAl_mp-1067&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c2</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c2</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span> 
+<span class="n">s2_eam</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s1">&#39;Li2Al2&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c2</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c2</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s2_hdn</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s1">&#39;Li2Al2&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c2</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c2</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s2_ace</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s1">&#39;Li2Al2&#39;</span><span class="p">,</span> <span class="s1">&#39;cubic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c2</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c2</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+
+<span class="n">c3</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">s3_dft</span> <span class="o">=</span> <span class="n">get_en_dft</span><span class="p">(</span><span class="s2">&quot;Li3Al2_mp-16506&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c3</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c3</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span> 
+<span class="n">s3_eam</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s1">&#39;Li3Al2&#39;</span><span class="p">,</span> <span class="s1">&#39;trigonal&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c3</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c3</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s3_hdn</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s1">&#39;Li3Al2&#39;</span><span class="p">,</span> <span class="s1">&#39;trigonal&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c3</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c3</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s3_ace</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s1">&#39;Li3Al2&#39;</span><span class="p">,</span> <span class="s1">&#39;trigonal&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c3</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c3</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+
+<span class="n">c4</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">s4_dft</span> <span class="o">=</span> <span class="n">get_en_dft</span><span class="p">(</span><span class="s2">&quot;Li9Al4_mp-568404&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c4</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c4</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span> 
+<span class="n">s4_eam</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s1">&#39;Li9Al4&#39;</span><span class="p">,</span> <span class="s1">&#39;monoclinic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c4</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c4</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s4_hdn</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s1">&#39;Li9Al4&#39;</span><span class="p">,</span> <span class="s1">&#39;monoclinic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c4</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c4</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+<span class="n">s4_ace</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s1">&#39;Li9Al4&#39;</span><span class="p">,</span> <span class="s1">&#39;monoclinic&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c4</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c4</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span>
+
+<span class="n">c5</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">s5_dft</span> <span class="o">=</span> <span class="n">get_en_dft</span><span class="p">(</span><span class="s2">&quot;Li_fcc&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c5</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c5</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span> 
+<span class="n">s5_eam</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_eam&#39;</span><span class="p">,</span> <span class="s1">&#39;Li&#39;</span><span class="p">,</span> <span class="s1">&#39;bcc&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c5</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c5</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span> 
+<span class="n">s5_hdn</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_hdnnp&#39;</span><span class="p">,</span> <span class="s1">&#39;Li&#39;</span><span class="p">,</span> <span class="s1">&#39;bcc&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c5</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c5</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span> 
+<span class="n">s5_ace</span> <span class="o">=</span> <span class="n">get_en</span><span class="p">(</span><span class="s1">&#39;AlLi_ace&#39;</span><span class="p">,</span> <span class="s1">&#39;Li&#39;</span><span class="p">,</span> <span class="s1">&#39;bcc&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">c5</span><span class="p">)</span><span class="o">*</span><span class="n">al_dft</span> <span class="o">+</span> <span class="n">c5</span><span class="o">*</span><span class="n">li_dft</span><span class="p">)</span> 
+
+<span class="n">mlt</span> <span class="o">=</span> <span class="n">Multiplot</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="p">)</span><span class="c1">#wspace=0.3)</span>
+
+<span class="n">a</span><span class="o">=</span><span class="mf">0.8</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">,</span> <span class="n">c5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">s1_dft</span><span class="p">,</span> <span class="n">s2_dft</span><span class="p">,</span> <span class="n">s3_dft</span><span class="p">,</span> <span class="n">s4_dft</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DFT&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">,</span> <span class="n">c5</span><span class="p">],</span> <span class="p">[</span><span class="n">s0_eam</span><span class="p">,</span> <span class="n">s1_eam</span><span class="p">,</span> <span class="n">s2_eam</span><span class="p">,</span> <span class="n">s3_eam</span><span class="p">,</span> <span class="n">s4_eam</span><span class="p">,</span> <span class="n">s5_eam</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;EAM&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">,</span> <span class="n">c5</span><span class="p">],</span> <span class="p">[</span><span class="n">s0_hdn</span><span class="p">,</span> <span class="n">s1_hdn</span><span class="p">,</span> <span class="n">s2_hdn</span><span class="p">,</span> <span class="n">s3_hdn</span><span class="p">,</span> <span class="n">s4_hdn</span><span class="p">,</span> <span class="n">s5_hdn</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;HDNNP&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">,</span> <span class="n">c5</span><span class="p">],</span> <span class="p">[</span><span class="n">s0_ace</span><span class="p">,</span> <span class="n">s1_ace</span><span class="p">,</span> <span class="n">s2_ace</span><span class="p">,</span> <span class="n">s3_ace</span><span class="p">,</span> <span class="n">s4_ace</span><span class="p">,</span> <span class="n">s5_ace</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ACE&#39;</span><span class="p">)</span>
+
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">s1_dft</span><span class="p">,</span> <span class="n">s2_dft</span><span class="p">,</span> <span class="n">s3_dft</span><span class="p">,</span> <span class="n">s4_dft</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">accent</span><span class="p">[</span><span class="s1">&#39;lgrey&#39;</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_\mathrm</span><span class="si">{Li}</span><span class="s2">$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">)</span>
+<span class="n">mlt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;E$_f$ (eV/atom)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;12&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.00</span><span class="p">,</span> <span class="s1">&#39;Al fcc&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.10</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;Al$_3$Li&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.20</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;AlLi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.61</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.20</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;Al$_2$Li$_3$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.71</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.17</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;Al$_4$Li$_9$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.84</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.00</span><span class="p">,</span> <span class="s1">&#39;Li bcc&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;img_convex_hull.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/55c827de9c265dfd505503c065bd5a734db6659f01344d1ea56daca3cdaf3d65.png" src="../_images/55c827de9c265dfd505503c065bd5a734db6659f01344d1ea56daca3cdaf3d65.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./03_validation"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_running_validation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Elastic constants and phonos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Fig6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Normal EV curves</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-hull">Convex Hull</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By pyiron
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
