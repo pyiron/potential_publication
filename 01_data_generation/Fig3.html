@@ -381,10 +381,22 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3785/2292613766.py:1: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s2">&quot;dft_ref_data.pkl.gz&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s2">&quot;../data/dft_ref_data.pkl.gz&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;c_Li&quot;</span><span class="p">,</span><span class="s2">&quot;vpa&quot;</span><span class="p">])</span>
 <span class="n">df_chull</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;e_chull_dist_per_atom&lt;0.001&quot;</span><span class="p">)</span>
 </pre></div>
@@ -425,8 +437,8 @@ document.write(`
 <span class="n">ax_ev</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">ax_ev</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">ax_vpa_hist</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">())</span>
 <span class="n">ax_ev</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">3.75</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">ax_ev</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;V $(\mathrm{\AA}^3$/atom)&quot;</span><span class="p">);</span>
-<span class="n">ax_ev</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;E (eV/atom)&quot;</span><span class="p">);</span>
+<span class="n">ax_ev</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$V$ $(\mathrm{\AA}^3$/atom)&quot;</span><span class="p">);</span>
+<span class="n">ax_ev</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$E$ (eV/atom)&quot;</span><span class="p">);</span>
 
 <span class="c1"># ax_ev.yaxis.tick_right()</span>
 <span class="c1"># ax_ev.yaxis.set_label_position(&quot;right&quot;)</span>
@@ -457,7 +469,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bee86a3cf504f201e06cb3d0c92f5a923574a1271ceef4241a9326c1ce49363a.png" src="../_images/bee86a3cf504f201e06cb3d0c92f5a923574a1271ceef4241a9326c1ce49363a.png" />
+<img alt="../_images/4c81b40189880fc72837752380fca2503c0914ff13ae07375e68b453c64cc861.png" src="../_images/4c81b40189880fc72837752380fca2503c0914ff13ae07375e68b453c64cc861.png" />
 </div>
 </div>
 
@@ -470,16 +482,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "potentials"
         },
         kernelOptions: {
-            name: "python3",
+            name: "potentials",
             path: "./01_data_generation"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'potentials'</script>
 
                 </article>
               
