@@ -1,3 +1,4 @@
+name: potentials
 channels:
 - conda-forge
 dependencies:
