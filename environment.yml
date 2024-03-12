@@ -1,43 +1,48 @@
 name: potentials
 channels:
-- conda-forge
+  - conda-forge
 dependencies:
-- cmake
-- python
-- atomicrex =1.0.3
-- runner =1.2
-- pyiron_potentialfit =0.0.1
-- pyiron_gpl =0.0.3
-- pyiron_workflow =0.0.3
-- pyiron-data
-- nbgitpuller =1.2.0
-- python-ace =0.2.8
-- lammps =2023.08.02
-- calphy =1.2.12
-- iprpy-data
-- sphinxdft >=2.7.0
-- sphinxdft-data
-- nglview
-- numpy >=1.26.0
-- pyscal
-- pyscal3
-- jupyterlab
-- jupyter-book
-- sqsgenerator
-- pymatgen
-- ipykernel
-- runner
-- ipympl
-- ipywidgets
-- matplotlib-base =3.8.0
-- pyscal-rdf
-- pydantic >=2.3.0
-- randspg
-- mp-api =0.37.5
-- typing-extensions =4.8.0
-- mpi4py =3.1.4
-- pylammpsmpi =0.2.3
-- pip:
-    #- runnerase
-    #- tensorflow <=2.7
+  - python =3.11
+  #jupyter related packages
+  - jupyterlab
+  - jupyter-book
+  - ipykernel
+  - ipympl
+  - ipywidgets
+  #pyiron packages
+  - pyiron =0.5.2
+  - pyiron_base =0.7.9
+  - pyiron_atomistics =0.4.17
+  - pyiron_contrib =0.1.15
+  - pyiron_potentialfit =0.1.0
+  - pyiron_gpl =0.0.4
+  - pyiron-data =0.0.29
+  - pyiron_workflow =0.4.2
+  - nbgitpuller =1.2.0
+  #fitting
+  - python-ace =0.2.8
+  - atomicrex =1.0.3
+  - runner =1.2
+  - calphy =1.3.6
+  - iprpy-data
+  - sphinxdft >=2.7.0
+  - sphinxdft-data
+  - nglview
+  - numpy >=1.26.0
+  - pyscal3
+  - sqsgenerator
+  - pymatgen
+  - pydantic >=2.3.0
+  - randspg
+  - mp-api =0.37.5
+  - randspg
+  - typing-extensions =4.8.0
+  - mpi4py =3.1.4
+  - lammps =2023.03.28=*openmpi*
+  - openmpi
+  - pylammpsmpi =0.2.13
+  - jupyterlab-h5web
+  - pyarrow
+  - pip:
+    - tensorflow
     - pychromatic
