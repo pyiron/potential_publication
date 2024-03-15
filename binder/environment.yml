@@ -43,6 +43,9 @@ dependencies:
   - pylammpsmpi =0.2.13
   - jupyterlab-h5web
   - pyarrow
+  - pyxtal
   - pip:
+    - --extra-index-url https://gitlab.com/api/v4/projects/35567400/packages/pypi/simple
+    - runnerase
     - tensorflow
     - pychromatic
