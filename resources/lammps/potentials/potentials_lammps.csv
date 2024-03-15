@@ -1,4 +1,4 @@
 ,Config,Filename,Model,Name,Species,Citations
-0,"['pair_style eam/fs\n', 'pair_coeff * * output.eam.fs Al Li\n']",['Atomicrex/output.eam.fs'],Atomicrex,AlLi-eam,"['Al', 'Li']",{}
-1,"['pair_style pace\n', 'pair_coeff * * AlLi-8a-k03-corerep.yace Al Li\n']",['ace/AlLi-8a-k03-corerep.yace'],ACE,AlLi-ace,"['Al', 'Li']",{}
-6,"['pair_style hdnnp 6.350126526766093 dir ./ showew yes showewsum 0 resetew yes maxew 1000 cflength 1.8897261328 cfenergy 0.0367493254\n', 'pair_coeff * * Al Li\n']","['hdnnp/input.nn', 'hdnnp/scaling.data', 'hdnnp/weights.013.data', 'hdnnp/weights.003.data']",HDNNP,AlLi-hdnnp,"['Al', 'Li']",{}
+0,"['pair_style eam/fs\n', 'pair_coeff * * output.eam.fs Al Li\n']",['atomicrex/output.eam.fs'],Atomicrex,AlLi-EAM,"['Al', 'Li']",{}
+1,"['pair_style pace\n', 'pair_coeff * * AlLi-8a-k03-corerep.yace Al Li\n']",['ace/AlLi-8a-k03-corerep.yace'],ACE,AlLi-ACE,"['Al', 'Li']",{}
+6,"['pair_style hdnnp 6.350126526766093 dir ./ showew yes showewsum 0 resetew yes maxew 1000 cflength 1.8897261328 cfenergy 0.0367493254\n', 'pair_coeff * * Al Li\n']","['hdnnp/input.nn', 'hdnnp/scaling.data', 'hdnnp/weights.013.data', 'hdnnp/weights.003.data']",HDNNP,AlLi-HDNNP,"['Al', 'Li']",{}
