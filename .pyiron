@@ -1,0 +1,4 @@
+[DEFAULT]
+TOP_LEVEL_DIRs = ~
+PROJECT_PATHS = ~
+RESOURCE_PATHS = ~/pyiron/resources:~/potentials/resources 
