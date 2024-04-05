@@ -1,51 +1,32 @@
-# This file contains some useful helper functions to make the notebooks more readable
+import numpy as np
+from scipy.optimize import curve_fit
 
-import pandas as pd
-import os
-
-
-
-#file_location = "../potentials/AlLi.eam.fs"
-
-#with open(file_location, "r") as f:
-#    lines = f.readlines()
+def fit_bm(vol, en):
+    a, b, c = np.polyfit(vol, en, 2)
+    V0 = -b/(2*a)
+    E0 = a*V0**2 + b*V0 + c
+    B0 = 2*a*V0
+    Bp = 4.0
+    popt, pcov = curve_fit(birch_murnaghan_eval, vol, en, p0=[V0, E0, B0, Bp])
+    return popt
     
-pot_eam = pd.DataFrame({
-    'Name': ['LiAl_eam'],
-    'Filename': [[os.path.abspath("../potentials/AlLi.eam.fs")]],
-    'Model': ["EAM"],
-    'Species': [['Li', 'Al']],
-    'Config': [['pair_style eam/fs\n', 'pair_coeff * * AlLi.eam.fs Li Al\n']]
-})
+def birch_murnaghan_eval(vol, V0, E0, B0, Bp):    
+    eta = (vol/V0)**(1.0/3.0)
+    E = E0 + 9.0*B0*V0/16.0 * (eta**2-1.0)**2 * (6.0 + Bp*(eta**2-1.0) - 4.0*eta**2)
+    return E
 
-pot_hdnnp = pd.DataFrame({
-    'Name': ['RuNNer-AlLi'],
-    'Filename': [['/home/jovyan/workshop_preparation/resources/lammps/potentials/hdnnp/input.nn',
-                  '/home/jovyan/workshop_preparation/resources/lammps/potentials/hdnnp/scaling.data',
-                  '/home/jovyan/workshop_preparation/resources/lammps/potentials/hdnnp/weights.013.data',
-                  '/home/jovyan/workshop_preparation/resources/lammps/potentials/hdnnp/weights.003.data']],
-    'Model': ['RuNNer'],
-    'Species': [['Al', 'Li']],
-    'Config': [['pair_style hdnnp 6.350126526766093 dir "./" showew yes showewsum 0 resetew no maxew 100 cflength 1.8897261328 cfenergy 0.0367493254\n',
-                'pair_coeff * * Al Li\n']]
-})
-
-pot_ace = pd.DataFrame({
-    'Name': ['LiAl_yace'],
-    'Filename': [[os.path.abspath("../potentials/03-ACE/AlLi-6gen-18May.yace")]],
-    'Model': ["ACE"],
-    'Species': [['Al', 'Li']],
-    'Config': [['pair_style pace\n', 'pair_coeff * * AlLi-6gen-18May.yace Al Li\n']]
-})
-
-
-potentials_list = [pot_eam, pot_hdnnp, pot_ace]
-
-
-def get_clean_project_name(pot):    
-    if isinstance(pot, str):
-        return pot.replace("-", "_").replace(".", "_")
-    elif isinstance(pot, pd.DataFrame):
-        return pot["Name"][0]
+def birch_murnaghan(df, compound, potential=None):
+    if potential is None:
+        dfs = df.loc[df['compound']==compound]
     else:
-        raise ValueError("Invalid potential type")
+        dfs = df.loc[(df["potential"]==potential) & (df["compound"]==compound)]
+    if len(dfs.volume.values) == 1:
+        vol = dfs.volume.values[0]
+        en = dfs.energy_per_atom.values[0]
+    else:
+        vol = dfs.volume.values
+        en = dfs.energy_per_atom.values
+    popt = fit_bm(vol, en)
+    volfit = np.linspace(min(vol), max(vol), 10000)
+    enfit = birch_murnaghan_eval(volfit, popt[0], popt[1], popt[2], popt[3])
+    return volfit, enfit    
