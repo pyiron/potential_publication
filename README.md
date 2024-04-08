@@ -51,3 +51,9 @@ Note that `<path-to-repo>` needs to be replaced with the actual path.
 
 The files for the interatomic potentials used in this work is available in the `resources/lammps/potentials` folder.
 
+## Contents
+
+- [01_data_generation](01_data_generation): workflows for data generation for parametrising interatomic potentials, and reproducing figures from the publication.
+- [02_fitting](02_fitting): Workflows for fitting classical and ML potentials.
+- [03_validation](03_validation): Workflows for validating potentials including EV curves, elastic constants, and phonon density of states.
+- [04_phase_diagram](04_phase_diagram): Workflows for calcuting phase diagrams for EAM, HDNNP, and ACE potentials.
