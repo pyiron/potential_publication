@@ -1,0 +1,104 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Workflows for "From electrons to phase diagrams with
+  classical and machine learning potentials: automated
+  workflows for materials science with pyiron"
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Sarath
+    family-names: Menon
+    email: s.menon@mpie.de
+    affiliation: Max-Planck-Institut für Eisenforschung GmbH
+    orcid: 'https://orcid.org/0000-0002-6776-1213'
+  - given-names: Yury
+    family-names: Lysogorskiy
+    affiliation: 'ICAMS, Ruhr-Universität Bochum'
+  - given-names: Alexander
+    name-particle: L. M.
+    family-names: Knoll
+    affiliation: >-
+      Lehrstuhl für Theoretische Chemie II, Ruhr-Universität
+      Bochum
+  - given-names: Niklas
+    family-names: Leimeroth
+    orcid: 'https://orcid.org/0009-0005-3906-4751'
+    affiliation: >-
+      Technische Universität Darmstadt, Fachbereich Material
+      und Geowissenschaften, Fachgebiet Materialmodellierung
+  - given-names: Marvin
+    family-names: Poul
+    affiliation: Max-Planck-Institut für Eisenforschung GmbH
+    orcid: 'https://orcid.org/0000-0002-6029-8748'
+  - given-names: Minaam
+    family-names: Qamar
+    orcid: 'https://orcid.org/0000-0002-3342-4307'
+    affiliation: 'ICAMS, Ruhr-Universität Bochum'
+  - given-names: Jan
+    family-names: Janssen
+    orcid: 'https://orcid.org/0000-0001-9948-7119'
+    affiliation: Max-Planck-Institut für Eisenforschung GmbH
+  - given-names: Matous
+    family-names: Mrovec
+    orcid: 'https://orcid.org/0000-0001-8216-2254'
+    affiliation: 'ICAMS, Ruhr-Universität Bochum'
+  - given-names: Jochen
+    family-names: Rohrer
+    affiliation: >-
+      Technische Universität Darmstadt, Fachbereich Material
+      und Geowissenschaften, Fachgebiet Materialmodellierung
+    orcid: 'https://orcid.org/0000-0002-4492-3371'
+  - given-names: Karsten
+    family-names: Albe
+    orcid: 'https://orcid.org/0000-0003-4669-8056'
+    affiliation: >-
+      Technische Universität Darmstadt, Fachbereich Material
+      und Geowissenschaften, Fachgebiet Materialmodellierung
+  - given-names: Jörg
+    family-names: Behler
+    orcid: 'https://orcid.org/0000-0002-1220-1542'
+    affiliation: >-
+      Lehrstuhl für Theoretische Chemie II, Ruhr-Universität
+      Bochum
+  - given-names: Ralf
+    family-names: Drautz
+    orcid: 'https://orcid.org/0000-0001-7101-8804'
+    affiliation: 'ICAMS, Ruhr-Universität Bochum'
+  - given-names: Jörg
+    family-names: Neugebauer
+    affiliation: Max-Planck-Institut für Eisenforschung GmbH
+    orcid: 'https://orcid.org/0000-0002-7903-2472'
+identifiers:
+  - type: doi
+    value: 10.48550/arXiv.2403.05724
+    description: ArXiv
+  - type: doi
+    value: 10.17617/3.VKQ3ZM
+    description: Associated dataset
+repository-code: 'https://github.com/pyiron/potential_publication'
+repository-artifact: 'https://doi.org/10.17617/3.VKQ3ZM'
+abstract: >-
+  We present a comprehensive and user-friendly framework
+  built upon the pyiron integrated development environment
+  (IDE), enabling researchers to perform the entire Machine
+  Learning Potential (MLP) development cycle consisting of
+  (i) creating systematic DFT databases, (ii) fitting the
+  Density Functional Theory (DFT) data to empirical
+  potentials or MLPs, and (iii) validating the potentials in
+  a largely automatic approach. The power and performance of
+  this framework are demonstrated for three conceptually
+  very different classes of interatomic potentials: an
+  empirical potential (embedded atom method - EAM), neural
+  networks (high-dimensional neural network potentials -
+  HDNNP) and expansions in basis sets (atomic cluster
+  expansion - ACE). As an advanced example for validation
+  and application, we show the computation of a binary
+  composition-temperature phase diagram for Al-Li, a
+  technologically important lightweight alloy system with
+  applications in the aerospace industry.
+license: BSD-3-Clause-Attribution
