@@ -2,7 +2,8 @@
 
 Sarath Menon, Yury Lysogorskiy, Alexander L. M. Knoll, Niklas Leimeroth, Marvin Poul, Minaam Qamar, Jan Janssen, Matous Mrovec, Jochen Rohrer, Karsten Albe, Jörg Behler, Ralf Drautz, Jörg Neugebauer    
 
-[Preprint at http://arxiv.org/abs/2403.05724 (2024)](http://arxiv.org/abs/2403.05724)
+[Preprint at http://arxiv.org/abs/2403.05724 (2024)](http://arxiv.org/abs/2403.05724)  
+[Dataset at https://doi.org/10.17617/3.VKQ3ZM (2024)](https://doi.org/10.17617/3.VKQ3ZM)
 
 This repository contains the workflows for the above publication. 
 
